@@ -1,0 +1,623 @@
+@charset "utf-8";
+
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+body {
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+	width: 960px;
+	margin: auto;
+}
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+/*ーーーーーーーーーーー
+	全体
+ーーーーーーーーーーー*/
+
+/*中央寄せ*/
+.text-center {
+	text-align: center;
+}
+
+/*ーーーーーーーーーーー
+	header
+ーーーーーーーーーーー*/
+
+.site-title {
+	font-size: 40px;
+	text-align: center;
+	color: #fafafa;
+	animation-name: fade;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.site-title p {
+	font-size: 30px;
+}
+
+.site-subtitle {
+	font-size: 36px;
+	text-align: center;
+	margin: 10px 0 0;
+	color: #fafafa;
+	font-weight: bold;
+}
+
+.site-title-img {
+	background: url(../img2/jiromaru.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 500px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	animation-name: fadeimg;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+}
+
+@keyframes fadeimg {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown4 {
+	/*描画位置※位置は適宜調整してください*/
+	position: absolute;
+	bottom: 1%;
+	right: 50%;
+	/*矢印の動き1秒かけて永遠にループ*/
+	animation: arrowmove 1s ease-in-out infinite;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove {
+	0% {
+		bottom: 1%;
+	}
+
+	50% {
+		bottom: 3%;
+	}
+
+	100% {
+		bottom: 1%;
+	}
+}
+
+/*Scrollテキストの描写*/
+.scrolldown4 span {
+	/*描画位置*/
+	position: absolute;
+	left: -20px;
+	bottom: 10px;
+	/*テキストの形状*/
+	color: #eee;
+	font-size: 0.7rem;
+	letter-spacing: 0.05em;
+	/*縦書き設定*/
+	-ms-writing-mode: tb-rl;
+	-webkit-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown4:before {
+	content: "";
+	/*描画位置*/
+	position: absolute;
+	bottom: 0;
+	right: -6px;
+	/*矢印の形状*/
+	width: 1px;
+	height: 20px;
+	background: #eee;
+	transform: skewX(-31deg);
+}
+
+.scrolldown4:after {
+	content: "";
+	/*描画位置*/
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	/*矢印の形状*/
+	width: 1px;
+	height: 50px;
+	background: #eee;
+}
+
+/*ーーーーーーーーーーー
+	ナビ
+ーーーーーーーーーーー*/
+
+.nav-wrapper {
+	height: 70px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.nav-img {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.nav-img img {
+	width: 27%;
+}
+
+.nav-box {
+	margin: 5px 0 0 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.nav-list {
+	display: flex;
+	font-size: 15px;
+	text-decoration: underline;
+}
+
+.nav-item {
+	margin: 0 40px 0 0;
+	color: black;
+}
+
+/*ーーーーーーーーーーー
+	about
+ーーーーーーーーーーー*/
+
+
+.about__title {
+	font-size: 2.4rem;
+	color: #FFA500;
+	margin: 60px 0 0;
+}
+
+.about__text {
+	margin: 24px 0 0;
+}
+
+.about__text2 {
+	margin: 20px 0 0;
+}
+
+.about__text3 {
+	margin: 20px 0 80px;
+}
+
+/*画像の横並び*/
+.about-img-box {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.about-img-box img {
+	width: 240px;
+}
+
+/*ーーーーーーーーーーー
+	Course
+ーーーーーーーーーーー*/
+
+/*Courseタイトルの上を64px*/
+.text__title {
+	font-size: 2.4rem;
+	color: #FFA500;
+	margin: 64px 0 10px 0;
+}
+
+.text__title2 {
+	margin: 0 0 64px 0;
+}
+
+h3 {
+	font-size: 24px;
+	color: #222222;
+	margin: 0 0 40px 0;
+}
+
+/*画像と文章の横並び×3*/
+
+/*画像1*/
+.course_box1 {
+	display: flex;
+}
+
+.course_box1_img {
+	width: 50%;
+}
+
+.course_box1_img img {
+	width: 100%;
+}
+
+.course_box1_text {
+	width: 50%;
+	padding: 0 0 0 48px;
+	display: flex;
+	align-items: center;
+}
+
+.course_box1_text2 {
+	width: 90%;
+}
+
+/*画像2*/
+.course_box2 {
+	display: flex;
+}
+
+.course_box2_img {
+	width: 50%;
+}
+
+.course_box2_img img {
+	width: 100%;
+}
+
+.course_box2_text {
+	width: 50%;
+	padding: 0 48px 0 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.course_box2_text2 {
+	width: 90%;
+}
+
+
+
+/*画像3*/
+.course_box3 {
+	display: flex;
+}
+
+.course_box3_img {
+	width: 50%;
+}
+
+.course_box3_img img {
+	width: 100%;
+}
+
+.course_box3_text {
+	width: 50%;
+	padding: 0 0 0 48px;
+	display: flex;
+	align-items: center;
+}
+
+.course_box3_text2 {
+	width: 90%;
+}
+
+
+/*ーーーーーーーーーーー
+	blog
+ーーーーーーーーーーー*/
+.wrapper {
+	max-width: 960px;
+	margin: auto;
+}
+
+.news__title {
+	font-size: 2.4rem;
+	color: #FFA500;
+	margin: 64px 0 64px;
+}
+
+.news__list {
+	display: flex;
+	margin: 0 0 56px;
+}
+
+.news__item {
+	width: 33.333%;
+	margin: 0 32px 0 0;
+}
+
+.news__item2 {
+	width: 33.333%;
+	margin: 0 32px 0 0;
+}
+
+.news__item3 {
+	width: 33.333%;
+}
+
+.news__eyecatch {
+	margin: 0 0 32px;
+}
+
+.news__eyecatch img {
+	max-width: 100%;
+	width: 298.67px;
+	height: 203.11px;
+}
+
+.news__text {
+	margin: 0 0 24px;
+}
+
+.news__eyecatch2 {
+	margin: 0 0 32px;
+}
+
+.news__eyecatch2 img {
+	max-width: 100%;
+}
+
+.news__text3 {
+	margin: 0 0 24px;
+}
+
+.news__eyecatch3 {
+	margin: 0 0 32px;
+}
+
+.news__eyecatch3 img {
+	max-width: 100%;
+}
+
+.news__text2 {
+	margin: 0 0 24px;
+}
+
+.btn-more {
+	display: block;
+	width: 300px;
+	margin: auto;
+	padding: 0.6px 0;
+	background-color: #FFA500;
+	color: #fff;
+	font-size: 2.1rem;
+}
+
+.news__btn {
+	margin: 0 0 48px;
+}
+
+/*ーーーーーーーーーーー
+	Access
+ーーーーーーーーーーー*/
+.access {
+	background-color: #fafafa;
+	padding: 64px 0 80px 0;
+}
+
+.acces_title {
+	font-size: 2.4rem;
+	color: #FFA500;
+	margin: 64px 0 24px 0;
+}
+
+.acces_subtitle {
+	margin: 0 0 64px 0;
+}
+
+.map-box {
+	width: 100%;
+}
+
+.access-list-box {
+	width: 650px;
+	margin: auto;
+}
+
+.access-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 64px 0 0 0;
+}
+
+.access-inner {
+	width: 100px;
+	margin: 0 0 24px 0;
+}
+
+.access-item {
+	width: 550px;
+	padding: 0 0 0 48px;
+}
+
+
+/*ーーーーーーーーーーー
+	Contact
+ーーーーーーーーーーー*/
+
+.contact-title {
+	font-size: 2.4rem;
+	color: #FFA500;
+	margin: 80px 0 0 0;
+}
+
+.contact-text {
+	margin: 10px 0 60px 0;
+}
+
+.contact-text2 {
+	margin: 0 0 32px 0;
+}
+
+
+.form-wrapper {
+	width: 640px;
+	margin: auto;
+}
+
+.form-inner {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 0 40px 0;
+}
+
+.form-title-name {
+	width: 250px;
+	padding: 0 120px 24px 0;
+}
+
+.form-title-kana {
+	width: 250px;
+	width: 250px;
+	padding: 0 120px 24px 0;
+}
+
+.form-title-mail {
+	width: 250px;
+	padding: 0 0 24px 0;
+}
+
+.form-title-motivation {
+	width: 250px;
+}
+
+.form-item-input {
+	font-size: 14px;
+	margin: 0 0 24px 0;
+}
+
+.form-title-detail {
+	width: 250px;
+}
+
+.form-item {
+	width: 328px;
+	height: 36px;
+	border: 1px solid #bfbfbf;
+}
+
+.form-item-box {
+	margin: 0 0 32px 0;
+}
+
+.form-item-checkbox {
+	width: 390px;
+}
+
+.form-item-detail {
+	border: 1px solid #bfbfbf;
+	width: 328px;
+	height: 108px;
+}
+
+.form-item-detail textarea {
+	width: 328px;
+	height: 108px;
+}
+
+.form-btn {
+	display: block;
+	width: 298px;
+	padding: 1.8px;
+	margin: auto;
+	background-color: #FFA500;
+	color: #fff;
+	font-size: 1.8rem;
+}
+
+.form-btn-box {
+	margin: 0 0 150px 0;
+}
+
+/*ーーーーーーーーーーー
+	footer
+ーーーーーーーーーーー*/
+.footer {
+	padding: 10px;
+	font-size: 18px;
+	background-color: #707070;
+}
+
+.copyrights {
+	color: #fff;
+}
+
+/*ーーーーーーーーーーー
+	ページトップボタン
+ーーーーーーーーーーー*/
+#pagetop {
+	right: 30px;
+	bottom: 30px;
+	margin: 0;
+
+}
+
+#pagetop a {
+	position: relative;
+	left: 850px;
+	display: flex;
+	width: 70px;
+	height: 70px;
+	justify-content: center;
+	background: orange;
+	/*背景の色を変える*/
+	transition: opacity .6s ease;
+	color: #FFFFFF;
+	/*アイコンの色を変える*/
+	align-items: center;
+	text-decoration: none;
+	font-size: 32px;
+	border-radius: 100%;
+}
+
+#pagetop a:hover {
+	opacity: .3;
+}
+
+@media screen and (max-width:767px) {
+	#pagetop a {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
